@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Inter&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="./jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="./package/dist/flatpickr.min.css">
+    <script src="./package/dist/flatpickr.min.js"></script>
+    <link rel="stylesheet" href="./package/dist/themes/material_blue.css">
+    <link rel="stylesheet" href="./package/dist/plugins/rangePlugin.js">
+
+</head>
+<body>
+    <section class="header">
+        <div class="logo-img-wrapper">
+            <img src="./images/logo-white.svg" alt="">
+        </div>
+    </section>
+
+    <section class="landing-page-background">
+        <div class="landing-page-img-wrapper">
+            <img src="./images/landing-page-1.jpeg" alt="">
+        </div>
+        <div class="landing-page-img-wrapper">
+            <img src="./images/panding-page-2.jpeg" alt="">
+        </div>
+        <div class="landing-page-img-wrapper">
+            <img src="./images/landing-page-3.jpeg" alt="">
+        </div>
+
+        <div class="landing-page-headings">
+            <h1>Are you ready to plan your new adventure?</h1>
+            <h2>Let's Go!</h2>
+        </div>
+
+        <div class="landing-search-wrapper">
+            <div class="input-center-wrapper">
+                <div class="input-wrapper">
+                    <label for="check-in">Check in</label>
+                    <input type="date" id="check-in-date" name="check-in">
+                </div>
+    
+                <div class="input-wrapper">
+                    <label for="check-out">Check out</label>
+                    <input type="date" id="check-out-date" name="check-out">
+                </div>
+    
+                <div class="input-wrapper">
+                    <label for="number-guests">No of Guests</label>
+                    <input type="number"  min="1" max="6" value="1"id="guests-input" name="number-guests">
+                </div>
+    
+                <div class="input-wrapper" id="search-button-wrapper">
+                    <span id="search-btn" name="search-btn">SEARCH</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="./js/date-picker.js"></script>
+    <script src="./js/script.js"></script>
+    
+</body>
+</html>
