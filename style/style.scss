@@ -49,11 +49,11 @@ $font_body_size: 1em;
 
     .landing-page-img-wrapper{
         flex: 1;
+        min-height: 800px;
 
         img{
             width: 100%;
             height: 100%;
-            min-height: 800px;
             object-fit: cover;
         }
     }
@@ -84,7 +84,7 @@ $font_body_size: 1em;
 .landing-search-wrapper{
     position: absolute;
     top: 60%;
-    left: 7%;
+    left: 10%;
     width: 70%;
     background-color: $blue_background;
     padding: 60px;
@@ -117,4 +117,58 @@ $font_body_size: 1em;
         }
 
     }
+}
+
+//HERO IMAGE
+.search-results-wrapper{
+    
+    
+
+    .hero-img-wrapper{
+        height: 400px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    #input-search-over-img{
+        background: rgba(45, 47, 119, 0);
+        top: 40%;
+        left: 10%;
+    }
+}
+
+//SEARCH RESULTS PAGE
+.title-h1{
+    @include headings();
+    color: $blue_background;
+    font-size: $font_body_size * 2;
+    margin: 50px 120px;
+}
+
+//ACCOMMODATION CARD
+.accomodation-card-wrapper{
+    border-radius: 15px;
+    border: 2px solid $blue_background;
+    box-shadow: 2px 2px black;
+    display: flex;
+    margin: 50px 120px;
+
+    .img-card-wrapper{
+        height: 300px;
+        width: 300px;
+        padding: 10px;
+    
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+    }
+
 }
