@@ -12,11 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Inter&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="./jquery-3.6.1.min.js"></script>
+    <script src="./js/jquery-3.6.1.min.js"></script>
     <link rel="stylesheet" href="./package/dist/flatpickr.min.css">
     <script src="./package/dist/flatpickr.min.js"></script>
     <link rel="stylesheet" href="./package/dist/themes/material_blue.css">
     <link rel="stylesheet" href="./package/dist/plugins/rangePlugin.js">
+
 
 </head>
 <body>
@@ -56,11 +57,12 @@
     
                 <div class="input-wrapper">
                     <label for="number-guests">No of Guests</label>
-                    <input type="number"  min="1" max="6" value="1"id="guests-input" name="number-guests">
+                    <input type="number"  min="1" max="6" value="1" id="guests-input" name="number-guests">
                 </div>
     
                 <div class="input-wrapper" id="search-button-wrapper">
-                    <span id="search-btn" name="search-btn">SEARCH</span>
+                    <a href="./search-results.html"><span id="search-btn" name="search-btn">search</span></a>
+                    <!-- <span id="search-btn" name="search-btn">search</span> -->
                 </div>
             </div>
         </div>
@@ -68,7 +70,8 @@
 
 
     <script src="./js/date-picker.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./js/search-landing-page.js"></script>
+    <script src="./js/date_calculator.js"></script>
     
 </body>
 </html>

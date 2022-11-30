@@ -1,3 +1,7 @@
+.no-display {
+  display: none !important;
+}
+
 .header {
   background-color: rgb(45, 47, 119);
   height: 150px;
@@ -64,6 +68,20 @@
   flex-direction: column;
   padding-right: 30px;
 }
+.landing-search-wrapper .input-center-wrapper .input-wrapper input[type=text] {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  font-weight: 400;
+}
+.landing-search-wrapper .input-center-wrapper .input-wrapper input[type=number] {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  font-weight: 500;
+}
 .landing-search-wrapper .input-center-wrapper .input-wrapper label {
   font-family: "Inter", sans-serif;
   font-size: 1em;
@@ -74,6 +92,9 @@
 .landing-search-wrapper .input-center-wrapper #search-button-wrapper {
   padding-top: 22px;
 }
+.landing-search-wrapper .input-center-wrapper #search-button-wrapper a {
+  text-decoration: none;
+}
 .landing-search-wrapper .input-center-wrapper #search-button-wrapper #search-btn {
   font-family: "Outfit", sans-serif;
   border-radius: 5px;
@@ -82,6 +103,7 @@
   background-color: rgb(186, 191, 42);
   font-size: 14px;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .search-results-wrapper .hero-img-wrapper {
@@ -115,8 +137,11 @@
   box-shadow: 2px 2px black;
   display: flex;
   margin: 50px 120px;
+  padding: 5px 5px;
+  max-height: 320px;
 }
 .accomodation-card-wrapper .img-card-wrapper {
+  max-height: 300px;
   height: 300px;
   width: 300px;
   padding: 10px;
@@ -127,4 +152,87 @@
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15px;
+}
+.accomodation-card-wrapper .accomodation-information-wrapper {
+  flex: 1;
+  margin-left: 20px;
+}
+.accomodation-card-wrapper .accomodation-information-wrapper .title-accommodation {
+  margin: 0;
+}
+.accomodation-card-wrapper .accomodation-information-wrapper .title-accommodation h2 {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  font-size: 1.5em;
+  margin: 16px 0 0 0;
+}
+.accomodation-card-wrapper .accomodation-information-wrapper .title-accommodation h3 {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  text-transform: uppercase;
+  color: rgb(183, 62, 171);
+  margin: 5px 0;
+}
+.accomodation-card-wrapper .accomodation-information-wrapper .title-accommodation .guest-description {
+  display: flex;
+  align-items: center;
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  color: rgb(183, 62, 171);
+  padding-bottom: 20px;
+}
+.accomodation-card-wrapper .accomodation-information-wrapper .title-accommodation .guest-description h4 {
+  margin: 0;
+}
+.accomodation-card-wrapper .accomodation-information-wrapper .accommodation-description-paragraph {
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+  max-height: 130px;
+  overflow: hidden;
+}
+.accomodation-card-wrapper .price-information-wrapper {
+  margin: 40px 16px;
+  padding-left: 30px;
+  text-align: right;
+}
+.accomodation-card-wrapper .price-information-wrapper .per-night-price-wrapper {
+  padding-bottom: 30px;
+}
+.accomodation-card-wrapper .price-information-wrapper .total-price-wrapper {
+  margin-bottom: 110px;
+}
+.accomodation-card-wrapper .price-information-wrapper .price {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  font-size: 1.3em;
+  margin: 0;
+}
+.accomodation-card-wrapper .price-information-wrapper .price-text {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  text-transform: uppercase;
+  font-size: 0.7692307692em;
+  color: rgb(183, 62, 171);
+  margin: 0;
+}
+.accomodation-card-wrapper .price-information-wrapper #select-btn {
+  font-family: "Outfit", sans-serif;
+  border-radius: 5px;
+  padding: 10px 40px;
+  color: white;
+  background-color: rgb(183, 62, 171);
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */
