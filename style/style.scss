@@ -6,7 +6,7 @@ $dark_grey: rgba(97, 97, 113, 1);
 
 //NO DISPLAY
 .no-display{
-    display:none !important;
+    // display:none !important;
 }
 //MIXING PACKAGES
 
@@ -230,12 +230,27 @@ $font_body_size: 1em;
                 align-items: center;
                 @include headings();
                 color: $pink_cta;
+                padding-bottom: 5px;
+                
+    
+                h4{
+                    margin: 0;
+                    padding-left: 10px;
+                }
+                
+            }
+
+            .night-description{
+                display: flex;
+                align-items: center;
+                @include headings();
+                color: $pink_cta;
                 padding-bottom: 20px;
     
                 h4{
                     margin: 0;
-                }
-                
+                    padding-left: 10px;
+                }   
             }
         }
 

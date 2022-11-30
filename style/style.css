@@ -1,7 +1,3 @@
-.no-display {
-  display: none !important;
-}
-
 .header {
   background-color: rgb(45, 47, 119);
   height: 150px;
@@ -185,10 +181,25 @@
   font-size: 1em;
   color: rgb(45, 47, 119);
   color: rgb(183, 62, 171);
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 .accomodation-card-wrapper .accomodation-information-wrapper .title-accommodation .guest-description h4 {
   margin: 0;
+  padding-left: 10px;
+}
+.accomodation-card-wrapper .accomodation-information-wrapper .title-accommodation .night-description {
+  display: flex;
+  align-items: center;
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  color: rgb(183, 62, 171);
+  padding-bottom: 20px;
+}
+.accomodation-card-wrapper .accomodation-information-wrapper .title-accommodation .night-description h4 {
+  margin: 0;
+  padding-left: 10px;
 }
 .accomodation-card-wrapper .accomodation-information-wrapper .accommodation-description-paragraph {
   font-family: "Inter", sans-serif;
