@@ -8,6 +8,7 @@ $dark_grey: rgba(97, 97, 113, 1);
 .no-display{
     // display:none !important;
 }
+
 //MIXING PACKAGES
 
 //TYPOGRAPHY
@@ -276,7 +277,7 @@ $font_body_size: 1em;
         }
         
 
-        .price{
+        .price, .total-price{
             @include headings();
             font-size: $font_body_size * 1.3;
             margin: 0;
@@ -297,4 +298,45 @@ $font_body_size: 1em;
         }
     }
 
+}
+
+$breakpoint-tablet: 1325px;
+@media (max-width: $breakpoint-tablet) {
+
+    .accomodation-card-wrapper{
+        flex-direction: column;
+        max-height: fit-content;
+        padding: 20px;
+
+        .img-card-wrapper{
+            width: 800px;
+            max-width: 950px;
+            min-height: 600px;
+            margin: auto;
+       
+            
+
+            img{
+                object-position: center;
+                
+            }
+        }
+
+        .accomodation-information-wrapper{
+            
+
+            .title-accommodation{
+
+                
+                .accomodation-name{
+                    flex-wrap: wrap;
+                }
+            }
+    
+            .accommodation-description-paragraph{
+                max-width: 1000px;
+            }
+        }
+   
+    }
 }

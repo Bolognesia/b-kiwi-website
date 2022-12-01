@@ -218,7 +218,7 @@
 .accomodation-card-wrapper .price-information-wrapper .total-price-wrapper {
   margin-bottom: 110px;
 }
-.accomodation-card-wrapper .price-information-wrapper .price {
+.accomodation-card-wrapper .price-information-wrapper .price, .accomodation-card-wrapper .price-information-wrapper .total-price {
   font-family: "Outfit", sans-serif;
   font-weight: bold;
   font-size: 1em;
@@ -246,4 +246,30 @@
   cursor: pointer;
   text-transform: uppercase;
   margin: 0;
+}
+
+@media (max-width: 1325px) {
+  .accomodation-card-wrapper {
+    flex-direction: column;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    padding: 20px;
+  }
+  .accomodation-card-wrapper .img-card-wrapper {
+    width: 800px;
+    max-width: 950px;
+    min-height: 600px;
+    margin: auto;
+  }
+  .accomodation-card-wrapper .img-card-wrapper img {
+    -o-object-position: center;
+       object-position: center;
+  }
+  .accomodation-card-wrapper .accomodation-information-wrapper .title-accommodation .accomodation-name {
+    flex-wrap: wrap;
+  }
+  .accomodation-card-wrapper .accomodation-information-wrapper .accommodation-description-paragraph {
+    max-width: 1000px;
+  }
 }/*# sourceMappingURL=style.css.map */
