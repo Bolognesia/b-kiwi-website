@@ -57,18 +57,18 @@
     
                 <div class="input-wrapper">
                     <label for="number-guests">No of Guests</label>
-                    <input type="number"  min="1" max="6" value="1" id="guests-input" name="number-guests">
+                    <input type="number"  min="1" value="1" id="guests-input" name="number-guests">
                 </div>
     
                 <div class="input-wrapper" id="search-button-wrapper">
-                    <!-- <a href="./search-results.html"><span id="search-btn" name="search-btn">search</span></a> -->
+                    <!-- <a href="#jump-to-results"><span id="search-btn" name="search-btn">search</span></a> -->
                     <span id="search-btn" name="search-btn">search</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="accomodation-results-section">
+    <section class="accomodation-results-section" id="jump-to-results">
         <div class="accomodation-card-wrapper no-display" id="House">
             <div class="img-card-wrapper">
                 <img src="" alt="" class="card-img">
@@ -223,6 +223,14 @@
                     <span id="select-btn">SELECT</span>
                 </div>
             </div>
+        </div>
+
+        <div class="accomodation-card-wrapper no-display" id="no-availability-alert">
+            <div class="alert-img-wrapper">
+                <img src="./images/alert-icon.svg" alt="">
+            </div>
+            
+            <p>Ops! Looks like we don't have options available for you request!</p>
         </div>
     </section>
 

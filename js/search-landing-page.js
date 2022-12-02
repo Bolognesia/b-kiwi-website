@@ -1,4 +1,4 @@
-//ACCOMMODATION ARRAY
+// //ACCOMMODATION ARRAY
 let accommodation_db =[
     {
         acc_image: './images/accomodation-1/accomoda.webp',
@@ -49,24 +49,24 @@ let accommodation_db =[
 
 
 
-//POPULATE CARD
+// POPULATE CARD
 
-//utku code
+// utku code
 
-// let current_card = document.getElementById(accommodation_db[0].acc_type);
-// console.log(current_card);
-// current_card.getElementsByClassName('accomodation-name')[0].innerHTML = accommodation_db[0].acc_name;
+let current_card = document.getElementById(accommodation_db[0].acc_type);
+console.log(current_card);
+current_card.getElementsByClassName('accomodation-name')[0].innerHTML = accommodation_db[0].acc_name;
 
 function populate_acc_cards(accObj){
     // console.log(accObj);
     // console.log(accommodation_db[0].acc_type);
-console.log(accObj.acc_type);
+    console.log(accObj.acc_type);
 
     let current_card = document.getElementById(accObj.acc_type);
 
     // console.log(current_card);
 
-    // console.log(     accObj.acc_name     );
+   
 
     current_card.getElementsByClassName('card-img')[0].src = accObj.acc_image;
     current_card.getElementsByClassName('accomodation-name')[0].innerHTML = accObj.acc_name;
@@ -91,10 +91,8 @@ populate_acc_cards(accommodation_db[i]);
 
 
 
-
-
 //ON CLICK SEARCH FUNCTION
-$('#search-btn').click(function(){
+$('#search-btn').click(function filter_accommodation(){
         // console.log($('#check-in-date').val());
 
         //DECLARE VARIABLES
@@ -106,12 +104,7 @@ $('#search-btn').click(function(){
         let difference = calculate_day_difference(check_in_value,check_out_value);
         console.log(difference);
 
-        // House 1-4 people $240/night – min 2 nights, max 15 nights
-        // Hotel 1-2 people – $157/night – min 1 night, max 5 nights
-        // Hostel 1 person – $30/night – min 1 night, max 10 nights
-        // Motel 2-4 people $90/night – min 3 nights, max 10 nights
         
-
         //HOUSE CONDITION
         if (guests_input <= 4 && difference >= 2 && difference <= 15){
             $('#House').removeClass('no-display');
@@ -148,12 +141,22 @@ $('#search-btn').click(function(){
         else
             $('#Motel').addClass('no-display');
 
+        //ALERT
+        if (guests_input > 4 || difference > 15){
+            $('#no-availability-alert').removeClass('no-display');
+            
+        }
+
+        
+
+        else
+            $('#no-availability-alert').addClass('no-display');
 
         //GET ITEM LOCAL STORAGE
         localStorage.setItem('guests_input',guests_input);
         localStorage.setItem('check_in_value', check_in_value);
         localStorage.setItem('check_out_value',check_out_value);
-        
+        localStorage.setItem('number_of_nights', difference);
 
         // //DECLARE VARIABLES FROM CARD ACCCOMODATION
         // // let accommodation_name = document.getElementsByClassName('accomodation-name').innerHTML;
@@ -166,7 +169,7 @@ $('#search-btn').click(function(){
         // }
         
         //REACHING SEARCH RESULTS PAGE WITH JS
-        // window.location = './search-results.html';  
+        document.getElementById('jump-to-results').scrollIntoView(); 
 
         let total_price_displays = document.getElementsByClassName('total-price')
         for(i=0; i < accommodation_db.length; i++){

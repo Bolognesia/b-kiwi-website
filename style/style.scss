@@ -6,7 +6,7 @@ $dark_grey: rgba(97, 97, 113, 1);
 
 //NO DISPLAY
 .no-display{
-    // display:none !important;
+    display:none !important;
 }
 
 //MIXING PACKAGES
@@ -37,6 +37,10 @@ $font_body_size: 1em;
     font-size: 14px;
     cursor: pointer;
     text-transform: uppercase;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 @mixin select-btn{
@@ -296,45 +300,41 @@ $font_body_size: 1em;
             @include select-btn();
             margin: 0;
         }
+
+        #select-btn:hover{
+            opacity: 0.8;
+        }
     }
 
 }
 
-$breakpoint-tablet: 1325px;
+//ALERT
+#no-availability-alert{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    p{
+        @include headings();
+        font-size: $font_body_size * 2;
+        text-align: center;
+    }
+}
+
+$breakpoint-tablet: 1250px;
 @media (max-width: $breakpoint-tablet) {
 
     .accomodation-card-wrapper{
-        flex-direction: column;
-        max-height: fit-content;
-        padding: 20px;
-
-        .img-card-wrapper{
-            width: 800px;
-            max-width: 950px;
-            min-height: 600px;
-            margin: auto;
-       
-            
-
-            img{
-                object-position: center;
-                
-            }
-        }
+        
+        max-height: 800px;
+        max-width: 1000px;
 
         .accomodation-information-wrapper{
             
-
-            .title-accommodation{
-
-                
-                .accomodation-name{
-                    flex-wrap: wrap;
-                }
-            }
-    
             .accommodation-description-paragraph{
-                max-width: 1000px;
+                display: none;
             }
         }
    

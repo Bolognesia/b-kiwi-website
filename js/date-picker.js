@@ -8,6 +8,7 @@ $('#check-in-date').flatpickr({
 })
 
 $('#check-out-date').flatpickr({
+    minDate: 'today',
     altInput: true,
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",

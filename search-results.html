@@ -28,40 +28,128 @@
             <img src="./images/logo-white.svg" alt="">
         </div>
     </section>
-    <section class="search-results-wrapper">
-
-        <div class="hero-img-wrapper">
-            <img src="./images/hero-img.jpeg" alt="">
-        </div>
-
-        <div class="landing-search-wrapper" id="input-search-over-img">
-            <div class="input-center-wrapper" >
-                <div class="input-wrapper">
-                    <label for="check-in">Check in</label>
-                    <input type="date" id="check-in-date" name="check-in">
-                </div>
-    
-                <div class="input-wrapper">
-                    <label for="check-out">Check out</label>
-                    <input type="date" id="check-out-date" name="check-out">
-                </div>
-    
-                <div class="input-wrapper">
-                    <label for="number-guests">No of Guests</label>
-                    <input type="number"  min="1" max="6" value="1"id="guests-input" name="number-guests">
-                </div>
-    
-                <div class="input-wrapper" id="search-button-wrapper">
-                    <span id="search-btn" name="search-btn">SEARCH</span>
-                </div>
-            </div>
-    </section>
-
-    <h1 class="title-h1">Our picks for you</h1>
-
     
     <section class="accomodation-results-section">
-        <div class="accomodation-card-wrapper no-display">
+        <div class="accomodation-card-wrapper no-display" id="House">
+            <div class="img-card-wrapper">
+                <img src="" alt="" class="card-img">
+            </div>
+
+            <div class="accomodation-information-wrapper">
+                <div class="title-accommodation">
+                    <h2 class="accomodation-name"></h2>
+                    <h3 class="type-accommodation"></h3>
+                    <div class="guest-description">
+                        <img src="./images/guest-icon.svg" alt="">
+                        <h4 class="guest-number"></h4>
+                    </div>
+                    <div class="night-description">
+                        <img src="./images/nights-icon.svg" alt="">
+                        <h4 class="acc-nights"></h4>
+                    </div>
+                </div>
+                
+                <p class="accommodation-description-paragraph"></p>
+            </div>
+
+            <div class="price-information-wrapper">
+                <div class="per-night-price-wrapper">
+                    <p class="price"></p>
+                    <h3 class="price-text">per night</h3>
+                </div>
+
+                <div class="total-price-wrapper">
+                    <p class="total-price"></p>
+                    <h3 class="price-text">total</h3>
+                </div>
+
+                <div class="select-wrapper" id="select-btn-wrapper">
+                    <span id="select-btn">SELECT</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="accomodation-card-wrapper no-display" id="Hotel">
+            <div class="img-card-wrapper">
+                <img src="" alt="" class="card-img">
+            </div>
+
+            <div class="accomodation-information-wrapper">
+                <div class="title-accommodation">
+                    <h2 class="accomodation-name"></h2>
+                    <h3 class="type-accommodation"></h3>
+                    <div class="guest-description">
+                        <img src="./images/guest-icon.svg" alt="">
+                        <h4 class="guest-number"></h4>
+                    </div>
+                    <div class="night-description">
+                        <img src="./images/nights-icon.svg" alt="">
+                        <h4 class="acc-nights"></h4>
+                    </div>
+                </div>
+                
+                <p class="accommodation-description-paragraph"></p>
+            </div>
+
+            <div class="price-information-wrapper">
+                <div class="per-night-price-wrapper">
+                    <p class="price"></p>
+                    <h3 class="price-text">per night</h3>
+                </div>
+
+                <div class="total-price-wrapper">
+                    <p class="total-price"></p>
+                    <h3 class="price-text">total</h3>
+                </div>
+
+                <div class="select-wrapper" id="select-btn-wrapper">
+                    <span id="select-btn">SELECT</span>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="title-h1">Our picks for you</h1>
+
+        <div class="accomodation-card-wrapper no-display" id="Hostel">
+            <div class="img-card-wrapper">
+                <img src="" alt="" class="card-img">
+            </div>
+
+            <div class="accomodation-information-wrapper">
+                <div class="title-accommodation">
+                    <h2 class="accomodation-name"></h2>
+                    <h3 class="type-accommodation"></h3>
+                    <div class="guest-description">
+                        <img src="./images/guest-icon.svg" alt="">
+                        <h4 class="guest-number"></h4>
+                    </div>
+                    <div class="night-description">
+                        <img src="./images/nights-icon.svg" alt="">
+                        <h4 class="acc-nights"></h4>
+                    </div>
+                </div>
+                
+                <p class="accommodation-description-paragraph"></p>
+            </div>
+
+            <div class="price-information-wrapper">
+                <div class="per-night-price-wrapper">
+                    <p class="price"></p>
+                    <h3 class="price-text">per night</h3>
+                </div>
+
+                <div class="total-price-wrapper">
+                    <p class="total-price"></p>
+                    <h3 class="price-text">total</h3>
+                </div>
+
+                <div class="select-wrapper" id="select-btn-wrapper">
+                    <span id="select-btn">SELECT</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="accomodation-card-wrapper no-display" id="Motel">
             <div class="img-card-wrapper">
                 <img src="" alt="" class="card-img">
             </div>
@@ -101,11 +189,11 @@
         </div>
     </section>
 
-    </div>
+    
 
     <script src="./js/search-results.js"></script>
     <script src="./js/date-picker.js"></script>
-    <script src="./js/search-landing-page.js"></script>
+    <!-- <script src="./js/search-landing-page.js"></script> -->
     <script src="./js/date_calculator.js"></script>
     
 </body>

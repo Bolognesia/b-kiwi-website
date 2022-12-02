@@ -1,3 +1,11 @@
+.no-display {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .header {
   background-color: rgb(45, 47, 119);
   height: 150px;
@@ -247,29 +255,31 @@
   text-transform: uppercase;
   margin: 0;
 }
+.accomodation-card-wrapper .price-information-wrapper #select-btn:hover {
+  opacity: 0.8;
+}
 
-@media (max-width: 1325px) {
+#no-availability-alert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+#no-availability-alert p {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  font-size: 2em;
+  text-align: center;
+}
+
+@media (max-width: 1250px) {
   .accomodation-card-wrapper {
-    flex-direction: column;
-    max-height: -webkit-fit-content;
-    max-height: -moz-fit-content;
-    max-height: fit-content;
-    padding: 20px;
-  }
-  .accomodation-card-wrapper .img-card-wrapper {
-    width: 800px;
-    max-width: 950px;
-    min-height: 600px;
-    margin: auto;
-  }
-  .accomodation-card-wrapper .img-card-wrapper img {
-    -o-object-position: center;
-       object-position: center;
-  }
-  .accomodation-card-wrapper .accomodation-information-wrapper .title-accommodation .accomodation-name {
-    flex-wrap: wrap;
+    max-height: 800px;
+    max-width: 1000px;
   }
   .accomodation-card-wrapper .accomodation-information-wrapper .accommodation-description-paragraph {
-    max-width: 1000px;
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */
