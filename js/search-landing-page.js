@@ -9,6 +9,16 @@ let accommodation_db =[
         acc_description: 'Relax in the beautiful cottage garden during the day and into the evening be captivated by the breathtaking night sky. Just 5 minutes walk to stunning Lake Tekapo and the Church of the Good Shepherd. The studio is spacious, warm and light and has a separate entrance and garden access. Super King size bed. An ideal space for couples. Not suitable for children or infants. ',
         acc_price_per_night: 240,
         id: '1',
+        amenities:{
+            linen: true,
+            free_parking:true,
+            free_wifi: true, 
+            heating: true,
+            tv: true,
+            washing_machine: true,
+            smoke_alarm: true,
+            smoking_allowed: true, 
+        },
     },
 
     {   
@@ -20,6 +30,16 @@ let accommodation_db =[
         acc_description: 'Peppers Bluewater Resort is a 4.5-star hotel close to the shores of Lake Tekapo. This resort offers luxury accommodation, great views and is ideally positioned for exploring the Mackenzie Basin and Southern Alps. It is a 10-minute walk from the Church of the Good Shepherd. The air-conditioned accommodation has a private bathroom and tea and coffee making facilities. Most feature a balcony, fully equipped kitchen and mountain or lake views. WiFi access is available for an additional charge.',
         acc_price_per_night: 157,
         id: '2',
+        amenities:{
+            linen: true,
+            free_parking:true,
+            free_wifi: true, 
+            heating: true,
+            tv: true,
+            washing_machine: true,
+            smoke_alarm: true,
+            smoking_allowed: true, 
+        },
     },
 
     {   
@@ -32,6 +52,16 @@ let accommodation_db =[
         acc_price_per_night: 30,
         acc_price_total: '',
         id: '3',
+        amenities:{
+            linen: true,
+            free_parking:true,
+            free_wifi: true, 
+            heating: true,
+            tv: true,
+            washing_machine: true,
+            smoke_alarm: true,
+            smoking_allowed: true, 
+        },
     },
 
     {   
@@ -43,6 +73,16 @@ let accommodation_db =[
         acc_description: 'Situated in the centre of the village, Lake Tekapo Village Motel offers rooms with lake views. Free WiFi and free private parking is available. Twizel is a 40-minute drive from the property. Guests can choose from Studios, Two-Bedroom Apartments and a Penthouse Suite that accommodates the top floor of the motel. All rooms at Lake Tekapo Village Motel feature a flat-screen TV, private bathroom with hairdryer, heating and ironing facilities.',
         acc_price_per_night: 90,
         id: '4',
+        amenities:{
+            linen: true,
+            free_parking:true,
+            free_wifi: true, 
+            heating: true,
+            tv: true,
+            washing_machine: true,
+            smoke_alarm: true,
+            smoking_allowed: true, 
+        },
     },
 ]
 
@@ -54,19 +94,17 @@ let accommodation_db =[
 // utku code
 
 let current_card = document.getElementById(accommodation_db[0].acc_type);
-console.log(current_card);
+// console.log(current_card);
 current_card.getElementsByClassName('accomodation-name')[0].innerHTML = accommodation_db[0].acc_name;
 
 function populate_acc_cards(accObj){
     // console.log(accObj);
     // console.log(accommodation_db[0].acc_type);
-    console.log(accObj.acc_type);
+    // console.log(accObj.acc_type);
 
     let current_card = document.getElementById(accObj.acc_type);
 
     // console.log(current_card);
-
-   
 
     current_card.getElementsByClassName('card-img')[0].src = accObj.acc_image;
     current_card.getElementsByClassName('accomodation-name')[0].innerHTML = accObj.acc_name;
@@ -177,8 +215,15 @@ $('#search-btn').click(function filter_accommodation(){
         
         }
     }
+);
 
-    
-    
+$('.select-btn').click(function select_accommodation(){
+    //using parentNode I'm reaching different levels of my code
+    // console.log(this.parentNode.parentNode.parentNode.id);
+    let selected_accommodation = this.parentNode.parentNode.parentNode.id;
+    console.log(selected_accommodation);
+    localStorage.setItem('selected_accommodation',selected_accommodation);
+    window.location = '../search-results.html';
+    }
 );
 

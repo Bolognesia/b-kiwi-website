@@ -6,7 +6,7 @@ $dark_grey: rgba(97, 97, 113, 1);
 
 //NO DISPLAY
 .no-display{
-    display:none !important;
+    // display:none !important;
 }
 
 //MIXING PACKAGES
@@ -307,6 +307,26 @@ html{
     }
 
 }
+
+//SPECIFICATION PAGE
+.current-accommodation-wrapper{
+    margin: 50px 100px;
+
+    .current-accomodation-name{
+
+        @include headings();
+        font-size: $font_body_size * 2;
+    }
+
+    .location-wrapper{
+        display: flex;
+        .current-accommodation-location{
+            @include headings();
+            color:$dark_grey;
+        }
+    }
+}
+
 
 //ALERT
 #no-availability-alert{
