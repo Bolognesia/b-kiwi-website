@@ -378,6 +378,7 @@ html{
 
                 .no-available{
                     text-decoration: line-through;
+                    color: red;
                 }
             }
         }
@@ -407,9 +408,45 @@ html{
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                border-radius: 2px;;
+            }
+        }
+
+        .meal-description-wrapper{
+            .meal-name{
+                margin: 15px 0 0 0;
+                @include headings();
+                font-size: $font_body_size * 1.3;
+            }
+
+            .meal-price{
+                margin: 10px 0 20px 0;
+                @include headings();
+                color: $dark_grey;
+            }
+
+            .meal-description{
+                @include paragraph();
+            }
+        }
+        
+        .add-wrapper{
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+
+            .add-btn{
+                @include search-btn();
+                background-color: $pink_cta;
+            }
+
+            .add-btn:hover{
+                opacity: 0.8;
             }
         }
     }
+
+  
 }
 
 

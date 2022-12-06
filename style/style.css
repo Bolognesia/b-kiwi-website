@@ -326,6 +326,7 @@ html {
 }
 .current-accommodation-wrapper .current-accommodation-amenities-wrapper .top-wrapper .amenities-wrapper .no-available, .current-accommodation-wrapper .current-accommodation-amenities-wrapper .bottom-wrapper .amenities-wrapper .no-available {
   text-decoration: line-through;
+  color: red;
 }
 .current-accommodation-wrapper .green-separator {
   border: none;
@@ -348,6 +349,46 @@ html {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 2px;
+}
+.meals-available-section .meal-wrapper .meal-description-wrapper .meal-name {
+  margin: 15px 0 0 0;
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  font-size: 1.3em;
+}
+.meals-available-section .meal-wrapper .meal-description-wrapper .meal-price {
+  margin: 10px 0 20px 0;
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  color: rgb(97, 97, 113);
+}
+.meals-available-section .meal-wrapper .meal-description-wrapper .meal-description {
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+}
+.meals-available-section .meal-wrapper .add-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.meals-available-section .meal-wrapper .add-wrapper .add-btn {
+  font-family: "Outfit", sans-serif;
+  border-radius: 5px;
+  padding: 5px 40px;
+  color: white;
+  background-color: rgb(186, 191, 42);
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(183, 62, 171);
+}
+.meals-available-section .meal-wrapper .add-wrapper .add-btn:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 1250px) {

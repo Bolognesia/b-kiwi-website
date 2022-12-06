@@ -11,7 +11,7 @@ let accommodation_db =[
         id: '1',
         amenities:{
             linen: false,
-            free_parking:true,
+            free_parking:false,
             free_wifi: true, 
             heating: true,
             tv: true,
@@ -30,7 +30,28 @@ let accommodation_db =[
             img7: './images/accomodation-1/d5ddad73-55ee-4b83-a5a3-ba8f2beaeb8a.webp',
             img8:'./images/accomodation-1/f7eac9cc-bb05-4759-840d-509decc32420.webp',
         },
-       
+
+        meal_name: {
+            meal1:'Fish & Chips',
+            meal2:'Steak pie',
+        },
+
+        meals:[
+            {   
+                id: 'm1',
+                name:'Fish & Chips',
+                price: 25,
+                type: 'breakfast',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem fugiat nesciunt consectetur numquam facere omnis incidunt eius alias, ipsa dicta quidem itaque porro quas hic! Sed aut ullam dolorum.'
+            },
+            {   
+                id: 'm2',
+                name:'Fish & Chips',
+                price: 25,
+                type: 'breakfast',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem fugiat nesciunt consectetur numquam facere omnis incidunt eius alias, ipsa dicta quidem itaque porro quas hic! Sed aut ullam dolorum.'
+            },
+        ]
             
     },
 
@@ -64,7 +85,25 @@ let accommodation_db =[
             img7: './images/accomodation-1/d5ddad73-55ee-4b83-a5a3-ba8f2beaeb8a.webp',
             img8:'./images/accomodation-1/f7eac9cc-bb05-4759-840d-509decc32420.webp',
         },
-        
+        meal_name: {
+            meal1:'meal 1',
+            meal2:'meal 2',
+        },
+
+        meals:[
+            {
+                name:'Fish & Chips',
+                price: 25,
+                type: 'breakfast',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem fugiat nesciunt consectetur numquam facere omnis incidunt eius alias, ipsa dicta quidem itaque porro quas hic! Sed aut ullam dolorum.'
+            },
+            {
+                name:'Fish & Chips',
+                price: 25,
+                type: 'breakfast',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem fugiat nesciunt consectetur numquam facere omnis incidunt eius alias, ipsa dicta quidem itaque porro quas hic! Sed aut ullam dolorum.'
+            },
+        ]
     },
 
     {   
@@ -98,6 +137,25 @@ let accommodation_db =[
             img7: './images/accomodation-1/d5ddad73-55ee-4b83-a5a3-ba8f2beaeb8a.webp',
             img8:'./images/accomodation-1/f7eac9cc-bb05-4759-840d-509decc32420.webp',
         },
+        meal_name: {
+            meal1:'meal 1',
+            meal2:'meal 2',
+        },
+
+        meals:[
+            {
+                name:'Fish & Chips',
+                price: 25,
+                type: 'breakfast',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem fugiat nesciunt consectetur numquam facere omnis incidunt eius alias, ipsa dicta quidem itaque porro quas hic! Sed aut ullam dolorum.'
+            },
+            {
+                name:'Fish & Chips',
+                price: 25,
+                type: 'breakfast',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem fugiat nesciunt consectetur numquam facere omnis incidunt eius alias, ipsa dicta quidem itaque porro quas hic! Sed aut ullam dolorum.'
+            },
+        ]
     },
 
     {   
@@ -130,6 +188,29 @@ let accommodation_db =[
             img7: './images/accomodation-1/d5ddad73-55ee-4b83-a5a3-ba8f2beaeb8a.webp',
             img8:'./images/accomodation-1/f7eac9cc-bb05-4759-840d-509decc32420.webp',
         },
+        meal_name: {
+            meal1:'meal 1',
+            meal2:'meal 2',
+        },
+
+        meals:[
+            {
+                id: 'm1',
+                name:'Fish & Chips',
+                price: 25,
+                type: 'breakfast',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem fugiat nesciunt consectetur numquam facere omnis incidunt eius alias, ipsa dicta quidem itaque porro quas hic! Sed aut ullam dolorum.'
+            },
+            {   
+                id: 'm2',
+                name:'Fish & Chips',
+                price: 25,
+                type: 'breakfast',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem fugiat nesciunt consectetur numquam facere omnis incidunt eius alias, ipsa dicta quidem itaque porro quas hic! Sed aut ullam dolorum.'
+            },
+        ]
+            
+        
     },
 ]
 
@@ -140,11 +221,10 @@ let current_accommodation = accommodation_db.filter(
     function(accObj){
         return accObj.acc_type == received_current_accommodation;
     }
-    
 )[0];
 
 // console.log(current_accommodation.acc_name);
-// console.log(current_accommodation);
+// console.log(current_accommodation.amenities['linen']);
 
 function populate_accommodation_page(){
 
@@ -152,22 +232,96 @@ function populate_accommodation_page(){
     document.getElementsByClassName('current-accommodation-location')[0].innerHTML = current_accommodation.location;
     document.getElementsByClassName('current-accommodation-description')[0].innerHTML = current_accommodation.acc_description;
 
+
+    //MEAL LEGACY CODE
+    // let meal_names_array = current_accommodation.meal_name;
+    //     console.log(meal_names_array);
+    // let meal_names_keys = Object.keys(current_accommodation.meal_name);
+
+    // for(let i =0; i < meal_names_keys.length ; i++){
+        
+    //     let meal_key = meal_names_keys[i];
+    //     // console.log(meal_key);
+    //     // console.log(current_accommodation.meal_name[meal_key] );
+    //     let meal_value = current_accommodation.meal_name[meal_key];
+    //     let id_meal_name_div = document.getElementById(meal_key);
+    //     console.log(id_meal_name_div);
+    //     id_meal_name_div.innerHTML = meal_value;
+    // }
+    //MEAL LEGACY CODE ENDS
+
+    //MEAL LEGACY CODE WITH ARRAY APPROACH STARTS
+
+    //reach my meals key inside of my db object
+    let meals_key = current_accommodation.meals;
+    console.log(meals_key);
+    console.log(meals_key[0].id);
+
+    let meal_name_container = document.getElementsByClassName('meal-name')[0];
+    let meal_price_container = document.getElementsByClassName('meal-price')[0];
+    let meal_type_container = document.getElementsByClassName('meal-type')[0];
+    let meal_description_container = document.getElementsByClassName('meal-description')[0];
+    let current_meal_card = document.getElementById(meals_key[0].id)
+
+
+    for (meal in meals_key){
+        let meal_available = meals_key[meal];
+        // console.log(meal_available.name);
+        let meal_name = meal_available.name;
+        console.log(meal_name);
+        let meal_price = meal_available.price;
+        console.log(meal_price);
+        let meal_type = meal_available.type;
+        console.log(meal_type);
+        let meal_description = meal_available.description;
+        console.log(meal_description);
+        
+        // let current_meal = document.getElementById(meal_available)
+        // console.log(current_meal);
+        
+        // meal_name_container.innerHTML = meal_name;
+        // console.log(document.getElementsByClassName('meal-name')[0]);
+
+        meal_name_container.innerHTML = meal_name;
+        
+    }
+
+    
+
+    
+    
+
+    //MEAL LEGACY CODE WITH ARRAY APPROACH ENDS
+
+
     //AMENITIES CONDITIONAL STATEMENT
-    //OBJECT APPROACH
+    //OBJECT KEYS APPROACH
     
     //reach the keys in my amenities object
     let amenities_available = Object.keys(current_accommodation.amenities);
-    console.log(amenities_available)
+    // console.log(amenities_available);
+    // console.log( current_accommodation.amenities['tv'] );
     
-    
-    for(let i =0; i < amenities_available.length ; i++)
-    // console.log(amenities_available[i]);
-    console.log(current_accommodation.amenities[amenities_available[i]]);
-      
+    //Iterate through my amenities
+    for(let i =0; i < amenities_available.length ; i++){
+        
+        // console.log( amenities_available[i] );
 
-    
-    // console.log(current_accommodation.amenities['linen']);
-   
+        //declare amenity variable from my objects
+        let amenity = amenities_available[i];
+        
+
+        //if statement to add class no-available when value is false
+        if(current_accommodation.amenities[amenity] == false){
+
+            //reach my amenity ID in my HTML
+           let id_amenity = document.getElementById(amenity);
+           id_amenity.classList.add('no-available');
+        }
+        // console.log( current_accommodation.amenities[amenity] );
+
+        
+    }
 }
 
 

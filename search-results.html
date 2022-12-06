@@ -70,46 +70,46 @@
             <h1 class="amenities-title">Amenities</h1>
 
             <div class="top-wrapper">
-                <div class="amenities-wrapper" id="linen">
+                <div class="amenities-wrapper">
                     <img src="./images/material-symbols_bed.svg" alt="">
-                    <p class="available">Linen</p>
+                    <p id="linen" class="available">Linen</p>
                 </div>
     
-                <div class="amenities-wrapper" id="free_parking">
+                <div class="amenities-wrapper">
                     <img src="./images/mdi_car-multiple.svg" alt="">
-                    <p class="available">Free Parking</p>
+                    <p id="free_parking" class="available">Free Parking</p>
                 </div>
     
-                <div class="amenities-wrapper" id="free_wifi">
+                <div class="amenities-wrapper" >
                     <img src="./images/ic_baseline-wifi.svg" alt="">
-                    <p class="available">Free Wifi</p>
+                    <p id="free_wifi" class="available">Free Wifi</p>
                 </div>
     
-                <div class="amenities-wrapper" id="heating">
+                <div class="amenities-wrapper">
                     <img src="./images/mdi_temperature.svg" alt="">
-                    <p class="available">Heating</p>
+                    <p id="heating" class="available">Heating</p>
                 </div>
             </div>
 
             <div class="bottom-wrapper">
-                <div class="amenities-wrapper" id="tv">
+                <div class="amenities-wrapper">
                     <img src="./images/material-symbols_tv-outline-rounded.svg" alt="">
-                    <p class="available">Tv</p>
+                    <p id="tv" class="available">Tv</p>
                 </div>
     
-                <div class="amenities-wrapper" id="washing_machine">
+                <div class="amenities-wrapper">
                     <img src="./images/iconoir_washing-machine.svg" alt="">
-                    <p class="available">Washing Machine</p>
+                    <p id="washing_machine" class="available">Washing Machine</p>
                 </div>
     
-                <div class="amenities-wrapper" id="smoke_alarm">
+                <div class="amenities-wrapper">
                     <img src="./images/mdi_smoke-detector-variant.svg" alt="">
-                    <p class="available">Smoke Alarm</p>
+                    <p id="smoke_alarm" class="available">Smoke Alarm</p>
                 </div>
     
-                <div class="amenities-wrapper" id="smoking_allowed">
+                <div class="amenities-wrapper">
                     <img src="./images/material-symbols_smoking-rooms-rounded.svg" alt="">
-                    <p class="available">Smoking Allowed</p>
+                    <p id="smoking_allowed" class="available">Smoking Allowed</p>
                 </div>
             </div>
           
@@ -118,23 +118,47 @@
         <hr class="green-separator">
 
         <section class="meals-available-section">
-            <div class="meal-wrapper">
+            <div class="meal-wrapper" id="m1">
                 <div class="meal-image-wrapper">
                     <img src="./images/accomodation-1/food/fish-chips.jpeg" alt="">
                 </div>
                 
                 <div class="meal-description-wrapper">
-                    <h3 class="meal-name">Hola</h3>
-                    <p class="meal-price">$15</p>
+                    <h3 class="meal-name" id="meal-name"></h3>
+                    <p class="meal-price"></p>
+                    <p class="meal-type"></p>
                     <p class="meal-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem fugiat nesciunt consectetur numquam facere omnis incidunt eius alias, ipsa dicta quidem itaque porro quas hic! Sed aut ullam dolorum.</p>
                 </div>
 
-                <div class="select-wrapper" id="select-btn-wrapper">
-                    <span id="select-btn" class="select-btn">SELECT</span>
+                <div class="add-wrapper" id="add-btn-wrapper">
+                    <span id="add-btn" class="add-btn">ADD</span>
+                </div>
+            </div>
+
+            <hr class="green-separator">
+
+            <div class="meal-wrapper" id="m2">
+                <div class="meal-image-wrapper">
+                    <img src="./images/accomodation-1/food/fish-chips.jpeg" alt="">
+                </div>
+                
+                <div class="meal-description-wrapper">
+                    <h3 class="meal-name" id="meal-name"></h3>
+                    <p class="meal-price"></p>
+                    <p class="meal-type"></p>
+                    <p class="meal-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem fugiat nesciunt consectetur numquam facere omnis incidunt eius alias, ipsa dicta quidem itaque porro quas hic! Sed aut ullam dolorum.</p>
+                </div>
+
+                <div class="add-wrapper" id="add-btn-wrapper">
+                    <span id="add-btn" class="add-btn">ADD</span>
                 </div>
             </div>
             <hr class="green-separator">
-        
+
+             
+            <div class="show-more-btn">
+                <span id="show-more-btn" class="show-more-btn">Load More</span>
+            </div>
         </section>
         
     </section>
