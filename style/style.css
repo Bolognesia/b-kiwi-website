@@ -255,6 +255,21 @@ html {
   opacity: 0.8;
 }
 
+#no-availability-alert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+#no-availability-alert p {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  font-size: 2em;
+  text-align: center;
+}
+
 .current-accommodation-wrapper {
   margin: 50px 100px;
 }
@@ -275,20 +290,60 @@ html {
   color: rgb(45, 47, 119);
   color: rgb(97, 97, 113);
 }
-
-#no-availability-alert {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+.current-accommodation-wrapper .current-accommodation-description {
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
 }
-#no-availability-alert p {
+.current-accommodation-wrapper .current-accommodation-amenities-wrapper .amenities-title {
   font-family: "Outfit", sans-serif;
   font-weight: bold;
   font-size: 1em;
   color: rgb(45, 47, 119);
   font-size: 2em;
-  text-align: center;
+}
+.current-accommodation-wrapper .current-accommodation-amenities-wrapper .top-wrapper, .current-accommodation-wrapper .current-accommodation-amenities-wrapper .bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.current-accommodation-wrapper .current-accommodation-amenities-wrapper .top-wrapper .amenities-wrapper, .current-accommodation-wrapper .current-accommodation-amenities-wrapper .bottom-wrapper .amenities-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding-bottom: 20px;
+}
+.current-accommodation-wrapper .current-accommodation-amenities-wrapper .top-wrapper .amenities-wrapper .available, .current-accommodation-wrapper .current-accommodation-amenities-wrapper .bottom-wrapper .amenities-wrapper .available {
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+  color: rgb(97, 97, 113);
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 0.8333333333em;
+  padding-left: 20px;
+}
+.current-accommodation-wrapper .current-accommodation-amenities-wrapper .top-wrapper .amenities-wrapper .no-available, .current-accommodation-wrapper .current-accommodation-amenities-wrapper .bottom-wrapper .amenities-wrapper .no-available {
+  text-decoration: line-through;
+}
+.current-accommodation-wrapper .green-separator {
+  border: none;
+  height: 3px;
+  color: rgb(186, 191, 42);
+  background-color: rgb(186, 191, 42);
+}
+
+.meals-available-section .meal-wrapper {
+  display: flex;
+}
+.meals-available-section .meal-wrapper .meal-image-wrapper {
+  max-height: 300px;
+  height: 150px;
+  width: 300px;
+  padding: 10px;
+}
+.meals-available-section .meal-wrapper .meal-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (max-width: 1250px) {

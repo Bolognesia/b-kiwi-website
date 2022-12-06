@@ -10,7 +10,7 @@ let accommodation_db =[
         acc_price_per_night: 240,
         id: '1',
         amenities:{
-            linen: true,
+            linen: false,
             free_parking:true,
             free_wifi: true, 
             heating: true,
@@ -30,6 +30,7 @@ let accommodation_db =[
             img7: './images/accomodation-1/d5ddad73-55ee-4b83-a5a3-ba8f2beaeb8a.webp',
             img8:'./images/accomodation-1/f7eac9cc-bb05-4759-840d-509decc32420.webp',
         },
+       
             
     },
 
@@ -133,7 +134,7 @@ let accommodation_db =[
 ]
 
 let received_current_accommodation = localStorage.getItem('selected_accommodation');
-console.log(received_current_accommodation);
+// console.log(received_current_accommodation);
 
 let current_accommodation = accommodation_db.filter(
     function(accObj){
@@ -142,17 +143,34 @@ let current_accommodation = accommodation_db.filter(
     
 )[0];
 
-console.log(current_accommodation.acc_name);
-
+// console.log(current_accommodation.acc_name);
 // console.log(current_accommodation);
 
 function populate_accommodation_page(){
 
-    
-    // current_accommodation.getElementsByClassName('accomodation-name')[0].innerHTML = accObj.acc_name;
-
     document.getElementsByClassName('current-accomodation-name')[0].innerHTML = current_accommodation.acc_name;
     document.getElementsByClassName('current-accommodation-location')[0].innerHTML = current_accommodation.location;
+    document.getElementsByClassName('current-accommodation-description')[0].innerHTML = current_accommodation.acc_description;
+
+    //AMENITIES CONDITIONAL STATEMENT
+    //OBJECT APPROACH
+    
+    //reach the keys in my amenities object
+    let amenities_available = Object.keys(current_accommodation.amenities);
+    console.log(amenities_available)
+    
+    
+    for(let i =0; i < amenities_available.length ; i++)
+    // console.log(amenities_available[i]);
+    console.log(current_accommodation.amenities[amenities_available[i]]);
+      
+
+    
+    // console.log(current_accommodation.amenities['linen']);
+   
 }
+
+
+
 
 populate_accommodation_page();
