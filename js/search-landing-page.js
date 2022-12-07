@@ -87,15 +87,16 @@ let accommodation_db =[
 ]
 
 
-
+// console.log(accommodation_db);
 
 // POPULATE CARD
 
 // utku code
 
 let current_card = document.getElementById(accommodation_db[0].acc_type);
-// console.log(current_card);
+console.log(current_card);
 current_card.getElementsByClassName('accomodation-name')[0].innerHTML = accommodation_db[0].acc_name;
+console.log(current_card.getElementsByClassName('accomodation-name')[0]);
 
 function populate_acc_cards(accObj){
     // console.log(accObj);
@@ -129,7 +130,7 @@ populate_acc_cards(accommodation_db[i]);
 
 
 
-//ON CLICK SEARCH FUNCTION
+//ON CLICK SEARCH FILTER FUNCTION STARTS
 $('#search-btn').click(function filter_accommodation(){
         // console.log($('#check-in-date').val());
 
@@ -217,6 +218,10 @@ $('#search-btn').click(function filter_accommodation(){
     }
 );
 
+//ON CLICK SEARCH FILTER FUNCTION ENDS
+
+
+//SELECT ACCOMMODATION ON CLICK FUNCTION
 $('.select-btn').click(function select_accommodation(){
     //using parentNode I'm reaching different levels of my code
     // console.log(this.parentNode.parentNode.parentNode.id);
