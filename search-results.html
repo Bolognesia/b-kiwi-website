@@ -29,40 +29,35 @@
         </div>
     </section>
     <section class="search-results-wrapper">
-
         <div class="hero-img-wrapper">
             <img src="./images/hero-img.jpeg" alt="">
         </div>
-
-        <!-- <div class="landing-search-wrapper" id="input-search-over-img">
-            <div class="input-center-wrapper" >
-                <div class="input-wrapper">
-                    <label for="check-in">Check in</label>
-                    <input type="date" id="check-in-date" name="check-in">
-                </div>
-    
-                <div class="input-wrapper">
-                    <label for="check-out">Check out</label>
-                    <input type="date" id="check-out-date" name="check-out">
-                </div>
-    
-                <div class="input-wrapper">
-                    <label for="number-guests">No of Guests</label>
-                    <input type="number"  min="1" max="6" value="1"id="guests-input" name="number-guests">
-                </div>
-    
-                <div class="input-wrapper" id="search-button-wrapper">
-                    <span id="search-btn" name="search-btn">SEARCH</span>
-                </div>
-            </div> -->
     </section>
 
     <section class="current-accommodation-wrapper">
-        <h1 class="current-accomodation-name"></h1>
-        <div class="location-wrapper">
-            <img src="./images/location-icon.svg" alt="">
-            <h2 class="current-accommodation-location"></h2>
+        <div class="search-current-accommodation-wrapper">
+            <h1 class="current-accomodation-name"></h1>
+            <div class="icons-info-wrapper">
+                <div class="location-wrapper">
+                    <img src="./images/location-icon.svg" alt="">
+                    <h2 class="current-accommodation-location"></h2>
+                </div>
+                <div class="current-accommodation-guest-info">
+                    <img src="./images/guest-black-icon.svg" alt="">
+                    <h4 class="current-accommodation-guest-number"></h4>
+                </div>
+                <div class="current-accommodation-night-info">
+                    <img src="./images/black-night-icon.svg" alt="">
+                    <h4 class="current-accommodation-nights"></h4>
+                </div>
+                <div class="current-accommodation-total-price-info">
+                    <img src="./images/dollar-icon.svg" alt="">
+                    <h4 class="current-accommodation-total-price"></h4>
+                </div>
+            </div>
+          
         </div>
+       
 
         <div class="image-gallery-wrapper">
             <div class="top-layout-wrapper">
@@ -152,7 +147,7 @@
 
         <hr class="green-separator">
 
-        <section class="meals-available-section">
+        <div class="meals-available-section">
             <div class="meal-wrapper" id="m1">
                 <div class="meal-image-wrapper">
                     <img class="meal-image" src="" alt="">
@@ -166,7 +161,7 @@
                 </div>
 
                 <div class="add-wrapper" id="add-btn-wrapper">
-                    <span id="add-btn" class="add-btn">ADD</span>
+                    <span id="add-btn-1" class="add-btn">ADD</span>
                 </div>
             </div>
 
@@ -185,54 +180,69 @@
                 </div>
 
                 <div class="add-wrapper" id="add-btn-wrapper">
-                    <span id="add-btn" class="add-btn">ADD</span>
+                    <span id="add-btn-2" class="add-btn">ADD</span>
                 </div>
             </div>
 
             <hr class="green-separator">
 
-            <!-- <div class="meal-wrapper" id="m2">
-                <div class="meal-image-wrapper">
-                    <img src="./images/accomodation-1/food/fish-chips.jpeg" alt="">
-                </div>
-                
-                <div class="meal-description-wrapper">
-                    <h3 class="meal-name" id="meal-name"></h3>
-                    <p class="meal-price"></p>
-                    <p class="meal-type"></p>
-                    <p class="meal-description"></p>
-                </div>
-
-                <div class="add-wrapper" id="add-btn-wrapper">
-                    <span id="add-btn" class="add-btn">ADD</span>
-                </div>
-            </div>
-
-            <hr class="green-separator">
-
-            <div class="meal-wrapper" id="m2">
-                <div class="meal-image-wrapper">
-                    <img src="./images/accomodation-1/food/fish-chips.jpeg" alt="">
-                </div>
-                
-                <div class="meal-description-wrapper">
-                    <h3 class="meal-name" id="meal-name"></h3>
-                    <p class="meal-price"></p>
-                    <p class="meal-type"></p>
-                    <p class="meal-description"></p>
-                </div>
-
-                <div class="add-wrapper" id="add-btn-wrapper">
-                    <span id="add-btn" class="add-btn">ADD</span>
-                </div>
-            </div>
-             -->
-
-             
-            <div class="show-more-btn">
+            <div class="show-more-btn-wrapper">
                 <span id="show-more-btn" class="show-more-btn">Load More</span>
             </div>
-        </section>
+
+            <div id= "hidden-meals" class="no-display">
+                <div class="meal-wrapper" id="m3">
+                    <div class="meal-image-wrapper">
+                        <img class="meal-image" src="" alt="">
+                    </div>
+                    
+                    <div class="meal-description-wrapper">
+                        <h3 class="meal-name" id="meal-name"></h3>
+                        <p class="meal-price"></p>
+                        <p class="meal-type"></p>
+                        <p class="meal-description"></p>
+                    </div>
+    
+                    <div class="add-wrapper" id="add-btn-wrapper">
+                        <span id="add-btn-3" class="add-btn">ADD</span>
+                    </div>
+                </div>
+    
+                <hr class="green-separator">
+    
+                <div class="meal-wrapper" id="m4">
+                    <div class="meal-image-wrapper">
+                        <img class="meal-image" src="" alt="">
+                    </div>
+                    
+                    <div class="meal-description-wrapper">
+                        <h3 class="meal-name" id="meal-name"></h3>
+                        <p class="meal-price"></p>
+                        <p class="meal-type"></p>
+                        <p class="meal-description"></p>
+                    </div>
+    
+                    <div class="add-wrapper" id="add-btn-wrapper">
+                        <span id="add-btn-4" class="add-btn">ADD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal no-display">
+            <div class="close-btn">X</div>
+            <h1 class="modal-title">Thanks for adding a meal!</h1>
+            <p class="booking-modal-paragraph">Your total including your accommodation and meals will be:</p>
+            <div class="modal-info-wrapper">
+                
+                <div class="current-accommodation-total-price-info">
+                    <img src="./images/dollar-icon.svg" alt="">
+                    <h4 class="current-accommodation-total-price"></h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-background"></div>
         
     </section>
     

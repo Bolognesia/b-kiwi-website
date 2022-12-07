@@ -50,6 +50,22 @@ let accommodation_db =[
                 description: 'These jumbo blueberry muffins are massive in both flavor and size. These extra large muffins are bursting with plenty of blueberries, have soft and moist centers, and big muffin tops. You can use a jumbo muffin pan or a regular 12-count muffin pan',
                 img: './images/accomodation-1/food/blueberries-muffin.jpeg'
             },
+            {   
+                id: 'm3',
+                name:'Fish & Chips',
+                price: 25,
+                type: 'lunch',
+                description: 'You know us for our fish and chips, but have you tasted some of the other yummy kai on offer? From fresh kaimoana to crispy fried chicken (with our famous chilli maple sauce) and mouth watering burgers, there is something for everyone at Fush!',
+                img: './images/accomodation-1/food/fish-chips.jpeg'
+            },
+            {   
+                id: 'm4',
+                name:'Jumbo Blueberry Muffin',
+                price: 10,
+                type: 'breakfast',
+                description: 'These jumbo blueberry muffins are massive in both flavor and size. These extra large muffins are bursting with plenty of blueberries, have soft and moist centers, and big muffin tops. You can use a jumbo muffin pan or a regular 12-count muffin pan',
+                img: './images/accomodation-1/food/blueberries-muffin.jpeg'
+            },
         ]
             
     },
@@ -103,6 +119,22 @@ let accommodation_db =[
                 description: 'Dry aged in house for a unique richer flavour and texture, served sliced off the bone, with your choice of any side and two sauces. All our prime cuts are served with delicious garlic & rosemary hassleback potatoes and a fresh salad garnish, along with your choice of sauce; creamy peppercorn, portobello mushroom, chimichurri or red wine jus.',
                 img: './images/accommodation-2-hotel/food/rump-steak.jpeg'
             },
+            {   
+                id: 'm3',
+                name:'Fish & Chips',
+                price: 25,
+                type: 'lunch',
+                description: 'You know us for our fish and chips, but have you tasted some of the other yummy kai on offer? From fresh kaimoana to crispy fried chicken (with our famous chilli maple sauce) and mouth watering burgers, there is something for everyone at Fush!',
+                img: './images/accomodation-1/food/fish-chips.jpeg'
+            },
+            {   
+                id: 'm4',
+                name:'Jumbo Blueberry Muffin',
+                price: 10,
+                type: 'breakfast',
+                description: 'These jumbo blueberry muffins are massive in both flavor and size. These extra large muffins are bursting with plenty of blueberries, have soft and moist centers, and big muffin tops. You can use a jumbo muffin pan or a regular 12-count muffin pan',
+                img: './images/accomodation-1/food/blueberries-muffin.jpeg'
+            },
         ]
     },
 
@@ -155,6 +187,22 @@ let accommodation_db =[
                 description: 'Scrambled, fried or poached, on toasted sourdough with house tomato relish, avocado and your choice of sauces. Perfect for the vegetarian eater and the backpacker in the budget!',
                 img: './images/accommodation-3-hostel/food/eggs-avo-toast.jpeg'
             },
+            {   
+                id: 'm3',
+                name:'Fish & Chips',
+                price: 25,
+                type: 'lunch',
+                description: 'You know us for our fish and chips, but have you tasted some of the other yummy kai on offer? From fresh kaimoana to crispy fried chicken (with our famous chilli maple sauce) and mouth watering burgers, there is something for everyone at Fush!',
+                img: './images/accomodation-1/food/fish-chips.jpeg'
+            },
+            {   
+                id: 'm4',
+                name:'Jumbo Blueberry Muffin',
+                price: 10,
+                type: 'breakfast',
+                description: 'These jumbo blueberry muffins are massive in both flavor and size. These extra large muffins are bursting with plenty of blueberries, have soft and moist centers, and big muffin tops. You can use a jumbo muffin pan or a regular 12-count muffin pan',
+                img: './images/accomodation-1/food/blueberries-muffin.jpeg'
+            },
         ]
     },
 
@@ -205,15 +253,41 @@ let accommodation_db =[
                 description: 'A selection of fresh vegetables layered between pasta sheets, served with Napoletana sauce and a sprinkle of cheese. A delicious vegetarian option.',
                 img: './images/accommodation-4-motel/food/pasta-alfredo.jpeg'
             },
+            {   
+                id: 'm3',
+                name:'Fish & Chips',
+                price: 25,
+                type: 'lunch',
+                description: 'You know us for our fish and chips, but have you tasted some of the other yummy kai on offer? From fresh kaimoana to crispy fried chicken (with our famous chilli maple sauce) and mouth watering burgers, there is something for everyone at Fush!',
+                img: './images/accomodation-1/food/fish-chips.jpeg'
+            },
+            {   
+                id: 'm4',
+                name:'Jumbo Blueberry Muffin',
+                price: 10,
+                type: 'breakfast',
+                description: 'These jumbo blueberry muffins are massive in both flavor and size. These extra large muffins are bursting with plenty of blueberries, have soft and moist centers, and big muffin tops. You can use a jumbo muffin pan or a regular 12-count muffin pan',
+                img: './images/accomodation-1/food/blueberries-muffin.jpeg'
+            },
         ]
             
         
     },
 ]
 
-
+//LOCAL STORAGE RECEIVED CODE STARTS
 let received_current_accommodation = localStorage.getItem('selected_accommodation');
 // console.log(received_current_accommodation);
+let received_total_price = localStorage.getItem('total_price');
+let received_check_in_value = localStorage.getItem('check_in_value');
+let received_check_out_value = localStorage.getItem('check_out_value');
+let received_guests_input = localStorage.getItem('guests_input');
+let received_number_of_nights = localStorage.getItem('number_of_nights');
+console.log(received_total_price);
+console.log(received_check_in_value);
+console.log(received_check_out_value);
+
+//LOCAL STORAGE RECEIVED CODE ENDS
 
 let current_accommodation = accommodation_db.filter(
     function(accObj){
@@ -231,6 +305,9 @@ function populate_accommodation_page(){
     document.getElementsByClassName('current-accomodation-name')[0].innerHTML = current_accommodation.acc_name;
     document.getElementsByClassName('current-accommodation-location')[0].innerHTML = current_accommodation.location;
     document.getElementsByClassName('current-accommodation-description')[0].innerHTML = current_accommodation.acc_description;
+    document.getElementsByClassName('current-accommodation-guest-number')[0].innerHTML = 'Number of guests:' + ' ' +received_guests_input;
+    document.getElementsByClassName('current-accommodation-nights')[0].innerHTML = 'Number of nights:' + ' ' + received_number_of_nights;
+    document.getElementsByClassName('current-accommodation-total-price')[0].innerHTML = 'total price:' + ' ' + '$' + received_total_price;
 
     //IMAGE GALLERY LEGACY CODE STARTS
 
@@ -350,6 +427,30 @@ function populate_accommodation_page(){
 
 //FUNCTION TO POPULATE ACCOMMODATION PAGE ENDS
 
+
 //CALL FUNCTION TO POPULATE ACCOMMODATION PAGE
 populate_accommodation_page();
 
+//LOAD MORE LEGACY CODE STARTS
+$('.show-more-btn').click(function load_more_meals(){
+    // console.log(this);
+    
+    $('#hidden-meals').removeClass('no-display');
+    $('#show-more-btn').addClass('no-display');
+    }
+)
+//LOAD MORE LEGACY CODE ENDS
+
+//MODAL LEGACY CODE STARTS
+$('.add-btn').click(function modal_pop_up(){
+        $('.modal').removeClass('no-display');
+    }
+)
+
+$('close-btn').click(function close_modal(){
+        $('.modal').addClass('no-display');
+    }
+)
+
+
+//MODAL LEGACY CODE STARTS

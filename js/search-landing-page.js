@@ -128,19 +128,22 @@ populate_acc_cards(accommodation_db[i]);
 
 
 
-
+let difference;
+let chech_in_value;
+let check_out_value;
+let guests_input;
 
 //ON CLICK SEARCH FILTER FUNCTION STARTS
 $('#search-btn').click(function filter_accommodation(){
         // console.log($('#check-in-date').val());
 
         //DECLARE VARIABLES
-        let check_in_value = $('#check-in-date').val();
+        check_in_value = $('#check-in-date').val();
         // console.log(check_in_value);
-        let check_out_value = $('#check-out-date').val();
-        let guests_input = $('#guests-input').val();
+        check_out_value = $('#check-out-date').val();
+        guests_input = $('#guests-input').val();
         // console.log(guests_input);
-        let difference = calculate_day_difference(check_in_value,check_out_value);
+        difference = calculate_day_difference(check_in_value,check_out_value);
         console.log(difference);
 
         
@@ -181,7 +184,7 @@ $('#search-btn').click(function filter_accommodation(){
             $('#Motel').addClass('no-display');
 
         //ALERT
-        if (guests_input > 4 || difference > 15){
+        if (guests_input > 4 || difference > 15 || difference < 0){
             $('#no-availability-alert').removeClass('no-display');
             
         }
@@ -192,20 +195,8 @@ $('#search-btn').click(function filter_accommodation(){
             $('#no-availability-alert').addClass('no-display');
 
         //GET ITEM LOCAL STORAGE
-        localStorage.setItem('guests_input',guests_input);
-        localStorage.setItem('check_in_value', check_in_value);
-        localStorage.setItem('check_out_value',check_out_value);
-        localStorage.setItem('number_of_nights', difference);
-
-        // //DECLARE VARIABLES FROM CARD ACCCOMODATION
-        // // let accommodation_name = document.getElementsByClassName('accomodation-name').innerHTML;
-
-        // for (i=0; i < accommodation_db.length; i++){
-        //     if()
-        //     let accommodation_name = document.getElementsByClassName('accomodation-name')[i].innerHTML;
-        //     console.log(accommodation_name);
-        //     localStorage.setItem('accomodation_name', accommodation_name);
-        // }
+       
+        
         
         //REACHING SEARCH RESULTS PAGE WITH JS
         document.getElementById('jump-to-results').scrollIntoView(); 
@@ -213,8 +204,9 @@ $('#search-btn').click(function filter_accommodation(){
         let total_price_displays = document.getElementsByClassName('total-price')
         for(i=0; i < accommodation_db.length; i++){
         total_price_displays[i].innerHTML = '$' + difference * accommodation_db[i].acc_price_per_night;
-        
         }
+
+        
     }
 );
 
@@ -228,7 +220,16 @@ $('.select-btn').click(function select_accommodation(){
     let selected_accommodation = this.parentNode.parentNode.parentNode.id;
     console.log(selected_accommodation);
     localStorage.setItem('selected_accommodation',selected_accommodation);
-    window.location = '../search-results.html';
+
+    // get the total into localstorage
+    // console.log((difference * accommodation_db[this.id].acc_price_per_night));
+    localStorage.setItem('total_price', (difference * accommodation_db[this.id].acc_price_per_night))
+    localStorage.setItem('guests_input',guests_input);
+    localStorage.setItem('check_in_value', check_in_value);
+    localStorage.setItem('check_out_value',check_out_value);
+    localStorage.setItem('number_of_nights', difference);
+
+    window.location = '../search-results.html';  
     }
 );
 

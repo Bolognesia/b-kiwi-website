@@ -244,7 +244,7 @@ html {
   color: rgb(183, 62, 171);
   margin: 0;
 }
-.accomodation-card-wrapper .price-information-wrapper #select-btn {
+.accomodation-card-wrapper .price-information-wrapper .select-btn {
   font-family: "Outfit", sans-serif;
   border-radius: 5px;
   padding: 10px 40px;
@@ -255,7 +255,7 @@ html {
   text-transform: uppercase;
   margin: 0;
 }
-.accomodation-card-wrapper .price-information-wrapper #select-btn:hover {
+.accomodation-card-wrapper .price-information-wrapper .select-btn:hover {
   opacity: 0.8;
 }
 
@@ -275,7 +275,11 @@ html {
 }
 
 .current-accommodation-wrapper {
+  position: relative;
   margin: 50px 100px;
+}
+.current-accommodation-wrapper .search-current-accommodation-wrapper {
+  margin: 30px auto;
 }
 .current-accommodation-wrapper .current-accomodation-name {
   font-family: "Outfit", sans-serif;
@@ -283,18 +287,25 @@ html {
   font-size: 1em;
   color: rgb(45, 47, 119);
   font-size: 2em;
-  margin: 0;
+  margin: 10px auto;
 }
-.current-accommodation-wrapper .location-wrapper {
+.current-accommodation-wrapper .icons-info-wrapper {
   display: flex;
 }
-.current-accommodation-wrapper .location-wrapper .current-accommodation-location {
+.current-accommodation-wrapper .icons-info-wrapper .location-wrapper, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-guest-info, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-night-info, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-total-price-info {
+  display: flex;
+  padding-right: 30px;
+}
+.current-accommodation-wrapper .icons-info-wrapper .location-wrapper .current-accommodation-location, .current-accommodation-wrapper .icons-info-wrapper .location-wrapper .current-accommodation-guest-number, .current-accommodation-wrapper .icons-info-wrapper .location-wrapper .current-accommodation-nights, .current-accommodation-wrapper .icons-info-wrapper .location-wrapper .current-accommodation-total-price, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-guest-info .current-accommodation-location, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-guest-info .current-accommodation-guest-number, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-guest-info .current-accommodation-nights, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-guest-info .current-accommodation-total-price, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-night-info .current-accommodation-location, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-night-info .current-accommodation-guest-number, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-night-info .current-accommodation-nights, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-night-info .current-accommodation-total-price, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-total-price-info .current-accommodation-location, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-total-price-info .current-accommodation-guest-number, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-total-price-info .current-accommodation-nights, .current-accommodation-wrapper .icons-info-wrapper .current-accommodation-total-price-info .current-accommodation-total-price {
   font-family: "Outfit", sans-serif;
   font-weight: bold;
   font-size: 1em;
   color: rgb(45, 47, 119);
   color: rgb(97, 97, 113);
-  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9090909091em;
+  margin: 10px;
 }
 .current-accommodation-wrapper .image-gallery-wrapper {
   display: flex;
@@ -395,24 +406,23 @@ html {
   color: rgb(186, 191, 42);
   background-color: rgb(186, 191, 42);
 }
-
-.meals-available-section .meal-wrapper {
+.current-accommodation-wrapper .meals-available-section .meal-wrapper {
   display: flex;
 }
-.meals-available-section .meal-wrapper .meal-image-wrapper {
+.current-accommodation-wrapper .meals-available-section .meal-wrapper .meal-image-wrapper {
   min-width: 300px;
   max-height: 300px;
   height: 200px;
   padding: 20px;
 }
-.meals-available-section .meal-wrapper .meal-image-wrapper img {
+.current-accommodation-wrapper .meals-available-section .meal-wrapper .meal-image-wrapper img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 2px;
 }
-.meals-available-section .meal-wrapper .meal-description-wrapper .meal-name {
+.current-accommodation-wrapper .meals-available-section .meal-wrapper .meal-description-wrapper .meal-name {
   margin: 15px 0 0 0;
   font-family: "Outfit", sans-serif;
   font-weight: bold;
@@ -420,7 +430,7 @@ html {
   color: rgb(45, 47, 119);
   font-size: 1.3em;
 }
-.meals-available-section .meal-wrapper .meal-description-wrapper .meal-price, .meals-available-section .meal-wrapper .meal-description-wrapper .meal-type {
+.current-accommodation-wrapper .meals-available-section .meal-wrapper .meal-description-wrapper .meal-price, .current-accommodation-wrapper .meals-available-section .meal-wrapper .meal-description-wrapper .meal-type {
   text-transform: uppercase;
   margin: 10px 0 20px 0;
   font-family: "Outfit", sans-serif;
@@ -429,16 +439,16 @@ html {
   color: rgb(45, 47, 119);
   color: rgb(97, 97, 113);
 }
-.meals-available-section .meal-wrapper .meal-description-wrapper .meal-description {
+.current-accommodation-wrapper .meals-available-section .meal-wrapper .meal-description-wrapper .meal-description {
   font-family: "Inter", sans-serif;
   font-size: 1em;
 }
-.meals-available-section .meal-wrapper .add-wrapper {
+.current-accommodation-wrapper .meals-available-section .meal-wrapper .add-wrapper {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
 }
-.meals-available-section .meal-wrapper .add-wrapper .add-btn {
+.current-accommodation-wrapper .meals-available-section .meal-wrapper .add-wrapper .add-btn {
   font-family: "Outfit", sans-serif;
   border-radius: 5px;
   padding: 5px 40px;
@@ -449,8 +459,53 @@ html {
   text-transform: uppercase;
   background-color: rgb(183, 62, 171);
 }
-.meals-available-section .meal-wrapper .add-wrapper .add-btn:hover {
+.current-accommodation-wrapper .meals-available-section .meal-wrapper .add-wrapper .add-btn:hover {
   opacity: 0.8;
+}
+.current-accommodation-wrapper .meals-available-section .show-more-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.current-accommodation-wrapper .meals-available-section .show-more-btn-wrapper .show-more-btn {
+  margin: 10px;
+  font-family: "Outfit", sans-serif;
+  border-radius: 5px;
+  padding: 5px 40px;
+  color: white;
+  background-color: rgb(186, 191, 42);
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 15px;
+}
+.current-accommodation-wrapper .meals-available-section .show-more-btn-wrapper .show-more-btn:hover {
+  opacity: 0.7;
+}
+.current-accommodation-wrapper .modal {
+  position: fixed;
+  background-color: rgb(186, 191, 42);
+  padding: 40px;
+  border-radius: 20px;
+  width: 70%;
+  top: 30%;
+  left: 15%;
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+.current-accommodation-wrapper .modal .close-btn {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  font-size: 1.5em;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.current-accommodation-wrapper .modal .close-btn:hover {
+  color: white;
 }
 
 @media (max-width: 1250px) {
