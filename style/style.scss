@@ -52,6 +52,7 @@ html{
     font-size: 14px;
     cursor: pointer;
     text-transform: uppercase;
+    
 }
 
 .header{
@@ -574,21 +575,29 @@ html{
 
 #modal{
     position: fixed;
-    background-color: $green_cta;
+    background-color: $dark_grey;
+    opacity: 0.97;
     padding: 40px;
     border-radius: 20px; 
     width: 70%;
     top: 30%;
     left: 15%;
     text-align: center;
+    border: 3px solid black;
 
     .modal-title{
         @include headings();
         font-size: $font_body_size * 1.5;
+        color:white;
     }
 
     .modal-paragraph{
         @include paragraph();
+        color: white;
+    }
+
+    .meal-chosen{
+        color: $green_cta;
     }
     
 
@@ -598,9 +607,10 @@ html{
         display: flex;
         justify-content: flex-end;
         cursor: pointer;
+        color: black;
     }
 
-    .close-btn:hover{
+    #close-btn:hover{
         color: white;
     }
 
@@ -609,10 +619,13 @@ html{
         .dollar, .modal-total-price{
             @include paragraph();
             font-size: $font_body_size * 1.5;
+            color: white;
             
         }
     }
 }
+
+
 
 
 
@@ -638,9 +651,30 @@ $breakpoint-phone: 800px;
         }
    
     }
+
+    #modal{
+        left: 13%;
+    }
 }
 
 @media(max-width: $breakpoint-small-tablet){
+
+    .landing-page-background{
+        .landing-search-wrapper{
+
+            .input-center-wrapper{
+                justify-content: space-around;
+
+                .input-wrapper{
+                    flex: 1;
+
+                    #search-button-wrapper{
+                        max-width: 30px;
+                    }
+                }
+            }
+        }
+    }
     .accomodation-card-wrapper{
         flex-direction: column;
         
@@ -667,6 +701,10 @@ $breakpoint-phone: 800px;
                 }
             }
         }
+    }
+
+    #modal{
+        left: 10%;
     }
 }
 
@@ -729,5 +767,9 @@ $breakpoint-phone: 800px;
 
             }
         }
+    }
+
+    #modal{
+        left: 9%;
     }
 }
