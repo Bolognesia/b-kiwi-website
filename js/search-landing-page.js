@@ -179,7 +179,7 @@ $('#search-btn').click(function filter_accommodation(){
             $('#Motel').addClass('no-display');
 
         //ALERT
-        if (guests_input > 4 || difference > 15 || difference < 0){
+        if (guests_input > 4 || difference > 15 || difference <= 0 || difference == 1 && guests_input >= 3){
             $('#no-availability-alert').removeClass('no-display');
             
         }
