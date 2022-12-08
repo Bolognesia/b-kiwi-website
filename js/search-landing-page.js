@@ -91,8 +91,6 @@ let accommodation_db =[
 
 // POPULATE CARD
 
-// utku code
-
 let current_card = document.getElementById(accommodation_db[0].acc_type);
 console.log(current_card);
 current_card.getElementsByClassName('accomodation-name')[0].innerHTML = accommodation_db[0].acc_name;
@@ -124,9 +122,6 @@ populate_acc_cards(accommodation_db[i]);
 
 // let id_var = 'myID';
 // document.getElementById(id_var);
-
-
-
 
 let difference;
 let chech_in_value;
@@ -189,12 +184,9 @@ $('#search-btn').click(function filter_accommodation(){
             
         }
 
-        
-
         else
             $('#no-availability-alert').addClass('no-display');
 
-        //GET ITEM LOCAL STORAGE
        
         
         

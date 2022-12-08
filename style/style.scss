@@ -64,6 +64,7 @@ html{
     }
 }
 
+//LANDING PAGE
 .landing-page-background{
     display: flex;
     position: relative;
@@ -156,10 +157,9 @@ html{
 
 //HERO IMAGE
 .search-results-wrapper{
-    
-    
-
+    position: relative;
     .hero-img-wrapper{
+        
         height: 400px;
 
         img{
@@ -169,19 +169,24 @@ html{
         }
     }
 
-    #input-search-over-img{
-        background: rgba(45, 47, 119, 0);
-        top: 40%;
-        left: 10%;
-    }
-}
+    .restart-search-btn-wrapper{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
-//SEARCH RESULTS PAGE
-.title-h1{
-    @include headings();
-    color: $blue_background;
-    font-size: $font_body_size * 2;
-    margin: 50px 120px;
+        .restart-search-btn{
+            @include search-btn();
+            padding: 20px;
+            color: $blue_background;
+            font-weight: bold;
+        }
+
+        .restart-search-btn:hover{
+            border: 5px solid $green_cta;
+            background-color: white;
+        }
+    }
 }
 
 //ACCOMMODATION CARD
@@ -370,8 +375,8 @@ html{
 
             .main-image-wrapper{
                 height: 500px;
-                 min-width: 600px;
-                 padding-right: 12px;
+                min-width: 600px;
+                padding-right: 12px;
 
                 img{
                     width: 100%;
@@ -431,15 +436,18 @@ html{
 
     .current-accommodation-description{
         @include paragraph();
+        padding: 20px 0;
+    }
+
+    .amenities-title{
+        @include headings();
+        font-size: $font_body_size * 2;
     }
 
     .current-accommodation-amenities-wrapper{
 
       
-        .amenities-title{
-            @include headings();
-            font-size: $font_body_size * 2;
-        }
+     
 
 
         .top-wrapper, .bottom-wrapper{
@@ -479,8 +487,17 @@ html{
         background-color: $green_cta;
     }
 
+    .meals-paragraph{
+        @include paragraph();
+    }
+
 
     .meals-available-section{
+
+        .meals-section-title{
+            @include headings();
+            font-size: $font_body_size * 2;
+        }
 
         .meal-wrapper{
             display: flex;
@@ -553,35 +570,50 @@ html{
             }
         }
     }
+}
 
-    .modal{
-        position: fixed;
-        background-color: $green_cta;
-        padding: 40px;
-        border-radius: 20px; 
-        width: 70%;
-        top: 30%;
-        left: 15%;
-        -webkit-animation-name: fadeIn; /* Fade in the background */
-        -webkit-animation-duration: 0.4s;
-        animation-name: fadeIn;
-        animation-duration: 0.4s;
-        
+#modal{
+    position: fixed;
+    background-color: $green_cta;
+    padding: 40px;
+    border-radius: 20px; 
+    width: 70%;
+    top: 30%;
+    left: 15%;
+    text-align: center;
 
-        .close-btn{
-            @include headings();
-            font-size: $font_body_size * 1.5;
-            display: flex;
-            justify-content: flex-end;
-            cursor: pointer;
-        }
-
-        .close-btn:hover{
-            color: white;
-        }
+    .modal-title{
+        @include headings();
+        font-size: $font_body_size * 1.5;
     }
 
+    .modal-paragraph{
+        @include paragraph();
+    }
+    
+
+    #close-btn{
+        @include headings();
+        font-size: $font_body_size * 1.5;
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+
+    .close-btn:hover{
+        color: white;
+    }
+
+    .modal-price-wrapper{
+        
+        .dollar, .modal-total-price{
+            @include paragraph();
+            font-size: $font_body_size * 1.5;
+            
+        }
+    }
 }
+
 
 
 
@@ -589,6 +621,7 @@ html{
 //TABLET BREAKPOINT
 $breakpoint-tablet: 1250px;
 $breakpoint-small-tablet: 979px;
+$breakpoint-phone: 800px;
 
 @media (max-width: $breakpoint-tablet) {
 
@@ -610,12 +643,91 @@ $breakpoint-small-tablet: 979px;
 @media(max-width: $breakpoint-small-tablet){
     .accomodation-card-wrapper{
         flex-direction: column;
-        max-height: 800px;
+        
 
         .img-card-wrapper{
             width: 90%;
             margin: 10px auto;
         }
     }
+
+    .current-accommodation-wrapper{
+
+        .icons-info-wrapper{
+            flex-direction: column;
+        }
+
+        .meals-available-section{
+
+            .meal-wrapper{
+                flex-direction: column;
+
+                .meal-image-wrapper{
+                    padding: 20px 0;
+                }
+            }
+        }
+    }
 }
 
+@media(max-width: $breakpoint-phone){
+
+    .landing-page-headings{
+        top: 10%;
+
+        h2{
+            display: none;
+        }
+
+        h1{
+            font-size: $font_body_size * 3;
+            padding: 0 20px;
+        }
+    }
+    .landing-search-wrapper{
+        width: 50%;
+        top: 40%;
+        left: 15%;
+
+        .input-center-wrapper{
+            .input-wrapper{
+
+                padding-bottom: 20px;
+            }
+        }
+    }
+    .current-accommodation-wrapper{
+        margin: 50px 80px;
+
+        .image-gallery-wrapper{
+            
+
+            .top-layout-wrapper{
+                .main-image-wrapper{
+                    
+                    height: 300px;
+                    min-width: fit-content;
+                    
+                }
+                
+                .two-images-wrapper{
+                    display: none;
+                }
+            }
+
+            .bottom-layout-wrapper{
+                display: none;
+            }
+           
+        }
+
+        .current-accommodation-amenities-wrapper{
+            display: flex;
+            justify-content: space-between;
+            .top-wrapper, .bottom-wrapper{
+                flex-direction: column;
+
+            }
+        }
+    }
+}

@@ -32,6 +32,9 @@
         <div class="hero-img-wrapper">
             <img src="./images/hero-img.jpeg" alt="">
         </div>
+        <div class="restart-search-btn-wrapper">
+            <div class="restart-search-btn">restart search</div>
+        </div>
     </section>
 
     <section class="current-accommodation-wrapper">
@@ -95,10 +98,11 @@
         </div>
 
         <p class="current-accommodation-description"></p>
+        <hr class="green-separator">
+        <h1 class="amenities-title">Amenities</h1>
 
         <div class="current-accommodation-amenities-wrapper">
-            <h1 class="amenities-title">Amenities</h1>
-
+        
             <div class="top-wrapper">
                 <div class="amenities-wrapper">
                     <img src="./images/material-symbols_bed.svg" alt="">
@@ -148,6 +152,9 @@
         <hr class="green-separator">
 
         <div class="meals-available-section">
+            <h1 class="meals-section-title">Meals</h1>
+            <p class="meals-paragraph">Here you can check meals available and prices, please go to reception to confirm purchased and final price</p>
+
             <div class="meal-wrapper" id="m1">
                 <div class="meal-image-wrapper">
                     <img class="meal-image" src="" alt="">
@@ -223,34 +230,29 @@
                     </div>
     
                     <div class="add-wrapper" id="add-btn-wrapper">
-                        <span id="add-btn-4" class="add-btn">ADD</span>
+                        <span id="add-btn-4" class="add-btn">add</span>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="modal no-display">
-            <div class="close-btn">X</div>
-            <h1 class="modal-title">Thanks for adding a meal!</h1>
-            <p class="booking-modal-paragraph">Your total including your accommodation and meals will be:</p>
-            <div class="modal-info-wrapper">
-                
-                <div class="current-accommodation-total-price-info">
-                    <img src="./images/dollar-icon.svg" alt="">
-                    <h4 class="current-accommodation-total-price"></h4>
-                </div>
+    <div id="modal" class="no-display">
+        <div id="close-btn">X</div>
+        <h1 class="modal-title">Thanks for adding a <span class="meal-chosen"></span> to your bill!</h1>
+        <p class="modal-paragraph">Your total including your accommodation and meals will be:</p>
+        <div class="modal-info-wrapper">
+            
+            <div class="modal-price-wrapper">
+                <h4 class="dollar">$<span class="modal-total-price"></span></h4>
             </div>
         </div>
-
-        <div class="modal-background"></div>
-        
-    </section>
-    
-    
-
-
     </div>
 
+    <div id="modal-bg"></div>
+
+    
+    
     <script src="./js/search-results.js"></script>
     <script src="./js/date-picker.js"></script>
     <script src="./js/date_calculator.js"></script>

@@ -284,16 +284,19 @@ let received_check_out_value = localStorage.getItem('check_out_value');
 let received_guests_input = localStorage.getItem('guests_input');
 let received_number_of_nights = localStorage.getItem('number_of_nights');
 console.log(received_total_price);
-console.log(received_check_in_value);
-console.log(received_check_out_value);
+// console.log(received_check_in_value);
+// console.log(received_check_out_value);
 
 //LOCAL STORAGE RECEIVED CODE ENDS
+
+
 
 let current_accommodation = accommodation_db.filter(
     function(accObj){
         return accObj.acc_type == received_current_accommodation;
     }
 )[0];
+
 
 // console.log(current_accommodation.acc_name);
 // console.log(current_accommodation.amenities['linen']);
@@ -341,26 +344,24 @@ function populate_accommodation_page(){
 
     //reach my meals key inside of my db object
     // let meals_key = current_accommodation.meals;
-    let current_meal = document.getElementById(current_accommodation.meals[0].id);
-    console.log(current_meal);
+    
+    // console.log(current_meal);
     // console.log(meals_key[0].id);
 
-    
-    current_meal.getElementsByClassName('meal-name')[0].innerHTML = current_accommodation.meals[0].name;
-    console.log( current_meal.getElementsByClassName('meal-name')[0]);
+    let current_meal = document.getElementById(current_accommodation.meals[0].id);
+    current_meal.getElementsByClassName('meal-name')[0].innerHTML = current_accommodation.meals[0].name;;
+    // console.log( current_meal.getElementsByClassName('meal-name')[0]);
 
     function populate_meals_card(mealObj){
         
         let current_meal = document.getElementById(mealObj.id);
-        console.log(current_meal);
+        // console.log(current_meal);
 
         current_meal.getElementsByClassName('meal-image')[0].src = mealObj.img;
         current_meal.getElementsByClassName('meal-name')[0].innerHTML = mealObj.name;
         current_meal.getElementsByClassName('meal-price')[0].innerHTML = '$' + mealObj.price;
         current_meal.getElementsByClassName('meal-type')[0].innerHTML = mealObj.type;
         current_meal.getElementsByClassName('meal-description')[0].innerHTML = mealObj.description;
-        
-        console.log(mealObj.price);
 
     }
 
@@ -371,29 +372,6 @@ function populate_accommodation_page(){
     
 
     // console.log(meals_key.getElementsByClassName('meal-name')[0].innerHTML = meals_key[0].name);
-
-
-    // for (meal in meals_key){
-    //     let meal_available = meals_key[meal];
-    //     // console.log(meal_available.name);
-    //     let meal_name = meal_available.name;
-    //     console.log(meal_name);
-    //     let meal_price = meal_available.price;
-    //     console.log(meal_price);
-    //     let meal_type = meal_available.type;
-    //     console.log(meal_type);
-    //     let meal_description = meal_available.description;
-    //     console.log(meal_description);
-        
-        // let current_meal = document.getElementById(meal_available)
-        // console.log(current_meal);
-        
-        // meal_name_container.innerHTML = meal_name;
-        // console.log(document.getElementsByClassName('meal-name')[0]);
-
-    //     meal_name_container.innerHTML = meal_name;
-        
-    // }
 
     //MEAL LEGACY CODE WITH ARRAY APPROACH ENDS
 
@@ -442,15 +420,54 @@ $('.show-more-btn').click(function load_more_meals(){
 //LOAD MORE LEGACY CODE ENDS
 
 //MODAL LEGACY CODE STARTS
-$('.add-btn').click(function modal_pop_up(){
-        $('.modal').removeClass('no-display');
-    }
-)
+//declare variables to be use
+let add_meal_btn = document.getElementsByClassName('add-btn');
+let modal_popping_card_index;
+let modal = document.getElementById('modal');
+let modal_bg = document.getElementById('modal-bg');
+let modal_total_price;
 
-$('close-btn').click(function close_modal(){
-        $('.modal').addClass('no-display');
-    }
-)
+//for loop to iterate through meals available per accommodation
+for (i = 0; i < add_meal_btn.length; i++)
+//on click when pressend add meal btn
+add_meal_btn[i].onclick = modal_toggle_on;
+
+//function for display toggle and populated with accommodation plus meals info
+function modal_toggle_on(){
+    modal_toggle();
+    let replica_array = Array.from(add_meal_btn);
+        let found_index = replica_array.indexOf(this);
+        modal_popping_card_index = found_index;
+
+        let modal_total_price = document.getElementsByClassName('modal-total-price')[0];
+        modal_total_price.innerHTML = current_accommodation.meals[found_index].price + (received_total_price *1);
+        
+        let modal_meal_name_span = document.getElementsByClassName('meal-chosen')[0];
+        modal_meal_name_span.innerHTML = current_accommodation.meals[found_index].name;
+
+        // console.log(current_accommodation.meals[found_index].price);
+        // console.log(typeof current_accommodation.meals[found_index].price);
 
 
+}
+
+function modal_toggle(){
+    modal.classList.toggle('no-display');
+    modal_bg.classList.toggle('no-display');
+} 
+
+// console.log(typeof received_total_price);
+// console.log(typeof (received_total_price * 1));
+
+document.getElementById('close-btn').onclick = modal_toggle;
+modal_bg.onclick = modal_toggle;
+ 
 //MODAL LEGACY CODE STARTS
+
+//RESTART SEARCH CODE STARTS
+$('.restart-search-btn').click(function(){
+    window.location = '../index.html';  
+    }
+)
+
+//RESTART SEARCH CODE ENDS

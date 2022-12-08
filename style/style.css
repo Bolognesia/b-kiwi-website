@@ -110,6 +110,9 @@ html {
   text-transform: uppercase;
 }
 
+.search-results-wrapper {
+  position: relative;
+}
 .search-results-wrapper .hero-img-wrapper {
   height: 400px;
 }
@@ -119,20 +122,28 @@ html {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.search-results-wrapper #input-search-over-img {
-  background: rgba(45, 47, 119, 0);
-  top: 40%;
-  left: 10%;
+.search-results-wrapper .restart-search-btn-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
-.title-h1 {
+.search-results-wrapper .restart-search-btn-wrapper .restart-search-btn {
   font-family: "Outfit", sans-serif;
+  border-radius: 5px;
+  padding: 5px 40px;
+  color: white;
+  background-color: rgb(186, 191, 42);
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 20px;
+  color: rgb(45, 47, 119);
   font-weight: bold;
-  font-size: 1em;
-  color: rgb(45, 47, 119);
-  color: rgb(45, 47, 119);
-  font-size: 2em;
-  margin: 50px 120px;
+}
+.search-results-wrapper .restart-search-btn-wrapper .restart-search-btn:hover {
+  border: 5px solid rgb(186, 191, 42);
+  background-color: white;
 }
 
 .accomodation-card-wrapper {
@@ -369,8 +380,9 @@ html {
 .current-accommodation-wrapper .current-accommodation-description {
   font-family: "Inter", sans-serif;
   font-size: 1em;
+  padding: 20px 0;
 }
-.current-accommodation-wrapper .current-accommodation-amenities-wrapper .amenities-title {
+.current-accommodation-wrapper .amenities-title {
   font-family: "Outfit", sans-serif;
   font-weight: bold;
   font-size: 1em;
@@ -405,6 +417,17 @@ html {
   height: 3px;
   color: rgb(186, 191, 42);
   background-color: rgb(186, 191, 42);
+}
+.current-accommodation-wrapper .meals-paragraph {
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+}
+.current-accommodation-wrapper .meals-available-section .meals-section-title {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  font-size: 2em;
 }
 .current-accommodation-wrapper .meals-available-section .meal-wrapper {
   display: flex;
@@ -481,7 +504,8 @@ html {
 .current-accommodation-wrapper .meals-available-section .show-more-btn-wrapper .show-more-btn:hover {
   opacity: 0.7;
 }
-.current-accommodation-wrapper .modal {
+
+#modal {
   position: fixed;
   background-color: rgb(186, 191, 42);
   padding: 40px;
@@ -489,12 +513,20 @@ html {
   width: 70%;
   top: 30%;
   left: 15%;
-  -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s;
+  text-align: center;
 }
-.current-accommodation-wrapper .modal .close-btn {
+#modal .modal-title {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(45, 47, 119);
+  font-size: 1.5em;
+}
+#modal .modal-paragraph {
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+}
+#modal #close-btn {
   font-family: "Outfit", sans-serif;
   font-weight: bold;
   font-size: 1em;
@@ -504,8 +536,13 @@ html {
   justify-content: flex-end;
   cursor: pointer;
 }
-.current-accommodation-wrapper .modal .close-btn:hover {
+#modal .close-btn:hover {
   color: white;
+}
+#modal .modal-price-wrapper .dollar, #modal .modal-price-wrapper .modal-total-price {
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+  font-size: 1.5em;
 }
 
 @media (max-width: 1250px) {
@@ -520,10 +557,60 @@ html {
 @media (max-width: 979px) {
   .accomodation-card-wrapper {
     flex-direction: column;
-    max-height: 800px;
   }
   .accomodation-card-wrapper .img-card-wrapper {
     width: 90%;
     margin: 10px auto;
+  }
+  .current-accommodation-wrapper .icons-info-wrapper {
+    flex-direction: column;
+  }
+  .current-accommodation-wrapper .meals-available-section .meal-wrapper {
+    flex-direction: column;
+  }
+  .current-accommodation-wrapper .meals-available-section .meal-wrapper .meal-image-wrapper {
+    padding: 20px 0;
+  }
+}
+@media (max-width: 800px) {
+  .landing-page-headings {
+    top: 10%;
+  }
+  .landing-page-headings h2 {
+    display: none;
+  }
+  .landing-page-headings h1 {
+    font-size: 3em;
+    padding: 0 20px;
+  }
+  .landing-search-wrapper {
+    width: 50%;
+    top: 40%;
+    left: 15%;
+  }
+  .landing-search-wrapper .input-center-wrapper .input-wrapper {
+    padding-bottom: 20px;
+  }
+  .current-accommodation-wrapper {
+    margin: 50px 80px;
+  }
+  .current-accommodation-wrapper .image-gallery-wrapper .top-layout-wrapper .main-image-wrapper {
+    height: 300px;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+  }
+  .current-accommodation-wrapper .image-gallery-wrapper .top-layout-wrapper .two-images-wrapper {
+    display: none;
+  }
+  .current-accommodation-wrapper .image-gallery-wrapper .bottom-layout-wrapper {
+    display: none;
+  }
+  .current-accommodation-wrapper .current-accommodation-amenities-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .current-accommodation-wrapper .current-accommodation-amenities-wrapper .top-wrapper, .current-accommodation-wrapper .current-accommodation-amenities-wrapper .bottom-wrapper {
+    flex-direction: column;
   }
 }/*# sourceMappingURL=style.css.map */
